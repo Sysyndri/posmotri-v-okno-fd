@@ -10,6 +10,8 @@ html {
 
 .page {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -28,7 +30,8 @@ ul,
 ol,
 li,
 blockquote,
-fieldset {
+fieldset,
+button {
   margin: 0;
   padding: 0;
 }
@@ -64,16 +67,15 @@ ol {
 
 .content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 30px;
-  min-width: 1140px;
+  width: 1140px;
 }
 
 .result__video-container {
   position: relative;
   width: 711px;
-  height: 386px;
+  min-height: 386px;
   margin-bottom: 16px;
 }
 
@@ -86,6 +88,7 @@ ol {
 
 .search-form {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
 }
@@ -99,6 +102,20 @@ ol {
   border: none;
 }
 
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
 .search-form__textfield {
   min-width: 225px;
   border-top: 1px solid #fff;
@@ -109,7 +126,7 @@ ol {
   font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
-  background-color: #000;
+  background-color: transparent;
   appearance: none;
 }
 
@@ -117,21 +134,13 @@ ol {
   color: rgb(255 255 255 / 0.7);
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-}
-
-.search-form__label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  width: fit-content;
-  cursor: pointer;
-}
-
-.search-form__label:has(:focus-visible) {
-  outline: 1px solid #fff;
 }
 
 .search-form__pseudo-checkbox {
@@ -165,9 +174,8 @@ ol {
 }
 
 .button {
-  width: 194px;
-  height: 34px;
   border: 1px solid #fff;
+  padding: 6px 74px;
   color: #fff;
   font-weight: 700;
   font-size: 18px;
@@ -223,7 +231,7 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  height: 400px;
+  height: 298px;
   overflow-y: scroll;
 }
 
@@ -263,7 +271,7 @@ ol {
 
 .content__video-card {
   display: flex;
-  align-self: flex-start;
+  align-items: flex-start;
 }
 
 .content__video-card-description-container {
@@ -301,4 +309,5 @@ ol {
 
 .more-button {
   width: 100%;
+  padding: 6px 0;
 }
